@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>how to fetch data from database in node js and display in html</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>  
+
+<br>
+  <table class="table">
+<thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Email</th>
+ 
+  </tr>    
+<%
+if(userData.length!=0){
+var i=1;
+userData.forEach(function(res){
+%>
+<tr>
+    <td><%=i; %></td>
+    <td><%=res.content %></td>
+    <td><%=res.completed %></td>
+</tr>
+<%  i++; }) %>
+<% } else{ %>
+    <tr>
+        <td colspan="7">No Data Found</td>
+    </tr>
+<% } %>
+  
+</tbody>
+</table>
+</body>
+</html>
