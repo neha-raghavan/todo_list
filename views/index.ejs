@@ -4,34 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="css/styles.css"/>
    
 </head>
 <style> @import url('https://fonts.googleapis.com/css2?family=Rancho&effect=shadow-multiple|3d-float'); </style>
 <body>
+    <% var count = Object.keys(userData).length %>
 <div class="container">
     <div id="heading" class="font-effect-shadow-multiple">MY DAILY</div>
     <div class="notebook">
         <div class="paper">
             <div class="paper-content">
                 <div id="lines" contenteditable="true"><strong style="padding-left: 35%;">To do list</strong> <br>
-                    <label class="containes">
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                        Do Laundry
-                      </label>
-<label class="containes">
-    <input type="checkbox">
-    <span class="checkmark"></span>
-    Clean Fridge
-  </label>
-  <label class="containes">
-    <input type="checkbox">
-    <span class="checkmark"></span>
-    clean floor
-  </label>
-<br><span style="color: lightgreen">Great</span>.
-<input type="submit" onclick="saveAccount()" id="createAccountButton" class="button2" value="Create Account"></input>
+        <% for(var i=0; i < count; i++) { %>
+            <label class="containes">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+          <%= userData.data[i].content %>
+        </label>
+        <% } %>
 </form>
 
 </div>
@@ -40,6 +31,5 @@
         </div>
     </div>
 </div>
-<script  src="test.js" ></script> 
 </body>
 </html>
